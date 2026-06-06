@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Utrecht Movie Times</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="toolbar" aria-label="Movie time filters">
+        <div>
+          <p class="eyebrow">Utrecht film houses</p>
+          <h1>Movie times</h1>
+        </div>
+
+        <form id="date-form" class="date-form">
+          <label for="date">Date</label>
+          <div class="date-row">
+            <input id="date" name="date" type="date" required />
+            <button type="submit">Show</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="venue-strip" aria-label="Included theaters">
+        <span>Springhaver</span>
+        <span>Louis Hartlooper</span>
+        <span>Slachtstraat</span>
+      </section>
+
+      <section class="status-line" aria-live="polite">
+        <span id="status">Choose a date to load the schedule.</span>
+        <span id="updated"></span>
+      </section>
+
+      <section id="results" class="results" aria-label="Movie showtimes"></section>
+    </main>
+
+    <template id="movie-template">
+      <article class="movie-card">
+        <div class="movie-main">
+          <a class="movie-title" target="_blank" rel="noreferrer"></a>
+          <span class="theater"></span>
+        </div>
+        <div class="times"></div>
+      </article>
+    </template>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
